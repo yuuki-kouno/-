@@ -22,9 +22,15 @@ export class DatabaseBooksService {
   }
 
   getToFavoriteBook(): Observable<Book[]> {
+<<<<<<< Updated upstream
     return this.db
       .collection<Book>(`users/${this.authService.uid}/favoriteBooks`)
       .valueChanges()
       .pipe(tap((result) => console.log(result)));
+=======
+    return this.db.collection<Book>(`users/${this.authService.uid}/favoriteBooks`).valueChanges().pipe(
+      tap(result => console.log(result))
+    );
+>>>>>>> Stashed changes
   }
 }
